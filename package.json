@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/duyue6002/my-utils.git"
   },
+  "scripts": {
+    "test": "mocha --require babel-core/register test/**/*.test.js",
+    "coverage": "nyc npm run test"
+  },
   "author": "Du Yue",
   "license": "ISC",
   "bugs": {
@@ -14,6 +18,16 @@
   },
   "homepage": "https://github.com/duyue6002/my-utils",
   "devDependencies": {
-    "eslint": "^6.3.0"
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   }
 }

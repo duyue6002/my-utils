@@ -1,0 +1,19 @@
+{
+  "name": "my-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/root.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duyue6002/my-utils.git"
+  },
+  "author": "Du Yue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duyue6002/my-utils/issues"
+  },
+  "homepage": "https://github.com/duyue6002/my-utils",
+  "devDependencies": {
+    "eslint": "^6.3.0"
+  }
+}

@@ -25,7 +25,7 @@ module.exports = {
 
     'comma-dangle': ['error', 'never'],
 
-    curly: ['error', 'all'],
+    curly: 'off',
 
     'eol-last': ['error'],
 

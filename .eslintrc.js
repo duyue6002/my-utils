@@ -107,7 +107,7 @@ module.exports = {
       },
     ],
 
-    'arrow-parens': ['error', 'always'],
+    'arrow-parens': 'off',
 
     'arrow-spacing': [
       'error',

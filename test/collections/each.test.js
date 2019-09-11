@@ -40,11 +40,11 @@ describe('each', function() {
 
   it('test array-like object', function() {
     let result = [];
-    let obj = { 1: 'one', 2: 'two', 3: 'three' };
+    let obj = { 0: 'zero', 1: 'one', 2: 'two', 3: 'three', length: 4 };
     each(obj, function(el) {
       result.push(el);
     });
-    assert.strictEqual(result, ['one', 'two', 'three']);
+    assert.deepEqual(result, ['zero', 'one', 'two', 'three']);
   });
 
   it('test null', function() {

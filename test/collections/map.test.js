@@ -56,7 +56,7 @@ describe('map', function() {
     assert.deepEqual(result, [1, 2, 3, 4]);
   });
 
-  it('test empty input', function() {
+  it('test empty collections', function() {
     let result = map(null, function() {});
     assert.deepEqual(result, []);
   });

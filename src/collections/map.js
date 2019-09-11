@@ -1,21 +1,19 @@
 import { optimizeCb, isArrayLike } from '../utils';
 
 function map(list, iteratee, context) {
+  if (typeof list !== 'object' || !list) return [];
+  let keys = !isArrayLike(list) && Object.keys(list);
+  let length = (keys || list).length;
+  let result = Array(length);
   let cb =
     typeof iteratee === 'function' ? optimizeCb(iteratee, context) : iteratee;
-  let result = [];
-  if (typeof list !== 'object' || !list) return result;
-  if (isArrayLike(list)) {
-    for (let i = 0, length = list.length; i < length; i++) {
-      if (typeof cb === 'string') {
-        result[i] = list[i][cb] || list[i];
-      } else {
-        result[i] = cb(list[i], i, list) || list[i];
-      }
-    }
-  } else {
-    for (let [key, value] of Object.entries(list)) {
-      result.push(cb(value, key, list) || value);
+  for (let i = 0; i < length; i++) {
+    let currentKey = keys[i] || i;
+    if (typeof cb === 'string') {
+      result[i] = list[currentKey][cb] || list[currentKey];
+    } else {
+      result[i] =
+        cb(list[currentKey], currentKey, list) || list[currentKey];
     }
   }
   return result;

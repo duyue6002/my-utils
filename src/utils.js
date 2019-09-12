@@ -1,6 +1,6 @@
-function optimizeCb(func, context = null) {
-  return function(...args) {
-    return func.apply(context, args);
+function optimizeCb(func, context) {
+  return function() {
+    return func.apply(context, arguments);
   };
 }
 

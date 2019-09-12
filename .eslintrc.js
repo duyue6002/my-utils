@@ -144,7 +144,7 @@ module.exports = {
 
     'prefer-const': 'off',
 
-    'prefer-rest-params': ['error'],
+    'prefer-rest-params': 'off',
 
     'prefer-template': 'off',
 

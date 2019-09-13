@@ -18,7 +18,7 @@ describe('reduce', () => {
       },
       0,
       {
-        multiplier: 3,
+        multiplier: 3
       }
     );
     assert.strictEqual(result, 18);

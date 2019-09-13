@@ -1,12 +1,26 @@
-function optimizeCb(func, context) {
+function optimizeCb(func, context, argCount) {
+  if (context === void 0) return func;
+  // TODO 为什么需要 switch
+  // switch (argCount === null ? 3 : argCount) {
+  //   case 3:
+  //     return function(value, index, collection) {
+  //       return func.call(context, value, index, collection);
+  //     };
+  //   case 4:
+  //     return function(accumulator, value, index, collection) {
+  //       return func.call(context, accumulator, value, index, collection);
+  //     };
+  //   default:
+  //     break;
+  // }
   return function() {
     return func.apply(context, arguments);
   };
 }
 
-function isArrayLike(collections) {
+function isArrayLike(collection) {
   const MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
-  let length = collections === null ? undefined : collections['length'];
+  let length = collection === null ? undefined : collection['length'];
   return typeof length === 'number' && length >= 0 && length <= MAX_ARRAY_INDEX;
 }
 

@@ -23,7 +23,7 @@ module.exports = {
       },
     ],
 
-    'comma-dangle': ['error', 'never'],
+    'comma-dangle': 'off',
 
     curly: 'off',
 

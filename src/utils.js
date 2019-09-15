@@ -1,4 +1,4 @@
-function optimizeCb(func, context, argCount) {
+function optimizeCb(func, context) {
   if (context === void 0) return func;
   // TODO 为什么需要 switch
   // switch (argCount === null ? 3 : argCount) {
@@ -27,6 +27,7 @@ function isArrayLike(collection) {
 function cb(value, context) {
   if (typeof value === 'function') return optimizeCb(value, context);
   if (value && typeof value === 'object' && !Array.isArray(value)) return value;
+  if (typeof value === 'string') return value;
 }
 
 export { optimizeCb, isArrayLike, cb };

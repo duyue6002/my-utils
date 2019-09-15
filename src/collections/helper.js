@@ -1,4 +1,4 @@
-import { optimizeCb, isArrayLike } from '../utils';
+import { cb, isArrayLike } from '../utils';
 
 let createReduce = function(dir) {
   let reducer = function(list, cb, memo, initial) {
@@ -19,7 +19,7 @@ let createReduce = function(dir) {
 
   return function(list, iteratee, memo, context) {
     let initial = arguments.length >= 3;
-    return reducer(list, optimizeCb(iteratee, context), memo, initial);
+    return reducer(list, cb(iteratee, context), memo, initial);
   };
 };
 

@@ -24,4 +24,9 @@ function isArrayLike(collection) {
   return typeof length === 'number' && length >= 0 && length <= MAX_ARRAY_INDEX;
 }
 
-export { optimizeCb, isArrayLike };
+function cb(value, context) {
+  if (typeof value === 'function') return optimizeCb(value, context);
+  if (value && typeof value === 'object' && !Array.isArray(value)) return value;
+}
+
+export { optimizeCb, isArrayLike, cb };

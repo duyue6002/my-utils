@@ -28,6 +28,10 @@ function cb(value, context) {
   if (typeof value === 'function') return optimizeCb(value, context);
   if (value && typeof value === 'object' && !Array.isArray(value)) return value;
   if (typeof value === 'string') return value;
+  if (value == null)
+    return function(value) {
+      return value;
+    };
 }
 
 export { optimizeCb, isArrayLike, cb };

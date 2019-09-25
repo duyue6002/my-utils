@@ -7,3 +7,5 @@ node_modules
 *.sublime-workspace
 coverage
 .nyc_output
+underscore.test.js
+*.lock

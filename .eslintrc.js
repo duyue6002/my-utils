@@ -29,14 +29,6 @@ module.exports = {
 
     'eol-last': ['error'],
 
-    indent: [
-      'error',
-      2,
-      {
-        SwitchCase: 1,
-      },
-    ],
-
     'keyword-spacing': ['error'],
 
     'max-len': [
@@ -82,8 +74,6 @@ module.exports = {
     semi: ['error'],
 
     'space-before-blocks': ['error', 'always'],
-
-    'space-before-function-paren': ['error', 'never'],
 
     'space-in-parens': ['error', 'never'],
 

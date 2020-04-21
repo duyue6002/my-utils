@@ -1,3 +1,3 @@
 const _ = window._;
 
-console.log(_.debounce);
+console.log(_.debounce());

@@ -1,3 +1,3 @@
 const _ = require('./utils');
 
-console.log(_);
+console.log(_.debounce());

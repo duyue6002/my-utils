@@ -1,15 +1,15 @@
 const _ = window._;
 const container = document.body;
 
-console.log(_.debounce);
+console.log(_.throttle);
 
 container.addEventListener(
   'mousemove',
-  _.debounce(
+  _.throttle(
     () => {
       console.log('move');
     },
     1000,
-    false
+    { trailing: false }
   )
 );

@@ -25,7 +25,7 @@
   } else {
     root._ = _$1;
   }
-})({ throttle });
+})({ flatten });
 
 // TODO - all custom functions
 /**
@@ -99,4 +99,17 @@ function debounce(func, wait, immediate) {
     timerId = null;
   };
   return debounced;
+}
+
+function flatten(input, shallow, output) {
+  output = output || [];
+  if (shallow) {
+    output = input.reduce((acc, cur) => acc.concat(cur), output);
+  } else {
+    output = input.reduce(
+      (acc, cur) => acc.concat(Array.isArray(cur) ? flatten(cur) : cur),
+      output
+    );
+  }
+  return output;
 }

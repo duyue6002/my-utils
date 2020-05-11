@@ -25,7 +25,7 @@
   } else {
     root._ = _$1;
   }
-})({ flatten });
+})({ cloneDeep });
 
 // TODO - all custom functions
 /**
@@ -123,6 +123,17 @@ function createReduce(direction) {
     return memo;
   };
 }
-
 var reduce = createReduce(1);
 var reduceRight = createReduce(-1);
+
+function cloneDeep(inObject) {
+  if (typeof inObject !== 'object' || inObject === null) {
+    return inObject;
+  }
+  let outObject = Array.isArray(inObject) ? [] : {};
+  for (key in inObject) {
+    let value = inObject[key];
+    outObject[key] = cloneDeep(value);
+  }
+  return outObject;
+}
